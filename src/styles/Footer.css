@@ -46,5 +46,15 @@
 }
 
 .info-text-2{
-    color: #9698A4;
+    color: #76767a;
+}
+
+.info-text-row{
+    display: flex;
+    gap: 16px;
+}
+
+.info-text-wrapper{
+    display: flex;
+    gap: 8px;
 }
