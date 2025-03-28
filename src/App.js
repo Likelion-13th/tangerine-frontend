@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import Footer from './components/Footer'
 import Home from './pages/Home/Home';
 import Mypage from './pages/Mypage/Mypage';
 import Diffuser from './pages/ProductPage/Diffuser';
@@ -17,6 +18,7 @@ function App() {
         <Route path="perfume" element={<Perfume />} />
         <Route path="new" element={<New />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
