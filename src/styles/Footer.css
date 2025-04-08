@@ -30,7 +30,7 @@
 
 .info-text-row{
     display: flex;
-    flex-direction:row;
+    /*flex-direction:row;*/
     gap:16px;
 }
 

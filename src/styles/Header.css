@@ -3,41 +3,58 @@
     src:url("../../public/font/KaiseiDecol-Regular.ttf") format("truetype");
 }
 
-.header-container{
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
-    padding: 20px 30px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 30px;
+    font-size: 22px;
+    font-family: "KaiseiDecol-Regular";
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+header[data-page = "mypage"]{
+    background-color: #e7eff5;
+}
+
+.logo a{
+    text-decoration: none;
     color: #ffffff;
-    background-color: rgba(196, 196, 196, 0.3);
-    justify-content:space-between;
-    font-size: 1.4rem;
-    font-family: 'KaiseiDecol-Regular';
+    font-size: 22px;
+}
+
+header[data-page + "mypage"] .logo a{
+    color: #3a3a3a;
 }
 
 .header-subtitle-wrapper{
     display: flex;
-    font-size: 1.4rem;
-    font-family: 'KaiseiDecol-Regular';
+    gap: 30px;
 }
 
-.active{
-    color: #5c5c5c;
-}
-
-.active-home,
-.active-home:hover{
+.header-subtitle-wrapper a{
+    text-decoration: none;
     color: #ffffff;
 }
 
-.mypage-bg{
-    background-color: #e7eff5;
+header[data-page = "mypage"] .header-subtitle-wrapper a{
+    color: #b8bac6;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-    padding: 0% 10px;
+.header-subtitle-wrapper a:hover,
+.header-subtitle-wrapper a:focus,
+.header-subtitle-wrapper a.active{
+    color: #3a3a3a;
 }
 
-a:hover{
-    color: #5c5c5c;
+header[data-page = "mypage"] .header-subtitle-wrapper a:hover,
+header[data-page = "mypage"] .header-subtitle-wrapper a:hover,
+header[data-page = "mypage"] .header-subtitle-wrapper a.active{
+    color: #3a3a3a;
 }

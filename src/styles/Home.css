@@ -1,0 +1,125 @@
+@font-face{
+    font-family:'KaiseiDecol-Regular';
+    src:url("../../public/font/KaiseiDecol-Regular.ttf") format("truetype");
+}
+
+@font-face{
+    font-family:'NanumMyeongjo-Regular';
+    src:url("../../public/font/NanumMyeongjo-Regular.ttf") format("truetype");
+}
+
+/* Home */
+.home-container{
+    width: 100%;
+}
+
+/* Menu */
+.menu-container{
+    display: flex;
+    width: 100%;
+    font-family: "KaiseiDecol-Regular";
+}
+
+.menu-section{
+    display:flex;
+    width: 50%;
+    position: relative;
+}
+
+.menu-section::before{
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    border: 2px solid white;
+}
+
+.menu-perfume{
+    width: 100%;
+    display: block;
+}
+
+.text-overlay{
+    position: absolute;
+    color: white;
+    font-size: 48px;
+}
+
+.text-perfume{
+    left: 28px;
+    bottom: 28px;
+}
+
+.text-diffuser{
+    right: 28px;
+    bottom: 28px;
+}
+
+/* Banner */
+.banner-container{
+    width: 100%;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: rgb(255, 255, 255);
+}
+
+.slick-dots li button:before {
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: .25;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+    left: 75px;
+    z-index: 1;
+}
+
+.slick-next {
+    right: 75px;
+}
+
+/* Info */
+.info-container{
+    display:flex;
+    margin: 150px;
+}
+
+.aboutus-left{
+    display: flex;
+    font-size: 48px;
+    font-family: "KaiseiDecol-Regular";
+}
+
+.aboutus{
+    writing-mode: vertical-rl;
+    text-align: right;
+}
+
+.aboutus-right{
+    font-family: "NanumMyeongjo-Regular";
+    margin: auto;
+}
+
+.aboutus-title{
+    font-size: 45px;
+    margin-bottom: 40px;
+}
+
+.aboutus-text{
+    font-size: 20px;
+}
