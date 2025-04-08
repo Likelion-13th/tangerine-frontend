@@ -6,6 +6,7 @@ const Info = () => {
             <div className="aboutus-left">
                 <img
                     src = {`${process.env.PUBLIC_URL}/img/about_us.png`}
+                    alt=""
                     className = "aboutus-img">
                 </img>
                 <div className="aboutus">
