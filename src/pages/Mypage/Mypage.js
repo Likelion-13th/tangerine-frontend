@@ -1,9 +1,17 @@
 import React from 'react';
+import "../../styles/Mypage.css";
+import Profile from "./Profile";
+import Status from "./Status";
+import Address from "./Address";
+import History from "./History";
 
 const Mypage = () => {
     return (
-        <div>
-            <h1>마이페이지</h1>
+        <div className="page-container">
+            <Profile />
+            <Status />
+            <Address />
+            <History />
         </div>
     );
 };
