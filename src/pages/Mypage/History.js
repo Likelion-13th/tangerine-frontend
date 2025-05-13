@@ -27,22 +27,22 @@ const History = () => {
                         <td>
                           <div className="product-info-cell">
                             <img
-                              src={`${process.env.PUBLIC_URL}/img/perfume_1.jpg`}
+                              src={`${process.env.PUBLIC_URL}/img/perfume_1.png`}
                               alt="perfume_1"
                               className="history-perfume-image"
                             />
                             <div className="product-info-section">
                                 <div className="product-info-text">
-                                  다슈 선데이 코튼 퍼퓸 향수 50ml
+                                  오션 향수 오드퍼퓸
                                 </div>
                                 <div className="product-info-explain">
-                                    아쿠아 다이브/보타닉 리프
+                                  AT
                                 </div>
                             </div>
                           </div>
                         </td>
                         <td>1</td>
-                        <td>42,000원</td>
+                        <td>495,000원</td>
                         <td>배송중</td>
                         <td>
 		                      <div className="history-cancel">
