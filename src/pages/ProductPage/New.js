@@ -60,19 +60,6 @@ const New = () => {
         setSelectedProduct(null);
         setModalOpen(false);
     }
-
-    const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 15; // 페이지당 15개 상품 표시
-    
-    const totalPages = Math.ceil(products.length / itemsPerPage);
-    
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const currentProducts = products.slice(startIndex, endIndex);
-    
-    const handlePageChange = (pageNumber) => {
-      setCurrentPage(pageNumber);
-    };
     
     return (
         <div>
