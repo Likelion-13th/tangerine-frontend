@@ -12,7 +12,7 @@ const New = () => {
             brand: "AT",
             price: 49500,
             imagePath: "/img/perfume_1.png",
-            isNew: false,
+            isNew: true,
         },
         {
             id: 2,
@@ -20,7 +20,7 @@ const New = () => {
             brand: "COCODOR",
             price: 33000,
             imagePath: "/img/diffuser_2.png",
-            isNew: false,
+            isNew: true,
         },
         {
             id: 3,
@@ -28,7 +28,7 @@ const New = () => {
             brand: "AT",
             price: 49500,
             imagePath: "/img/perfume_3.png",
-            isNew: false,
+            isNew: true,
         },
         {
             id: 4,
@@ -36,7 +36,7 @@ const New = () => {
             brand: "COCODOR",
             price: 37800,
             imagePath: "/img/diffuser_4.png",
-            isNew: false,
+            isNew: true,
         },
         {
             id: 5,
@@ -44,7 +44,7 @@ const New = () => {
             brand: "STUDIO ODOR",
             price: 43900,
             imagePath: "/img/perfume_5.png",
-            isNew: false,
+            isNew: true,
         },
     ];
 

@@ -20,7 +20,7 @@ const Diffuser = () => {
             brand: "COCODOR",
             price: 33000,
             imagePath: "/img/diffuser_2.png",
-            isNew: false,
+            isNew: true,
         },
         {
             id: 3,
@@ -36,7 +36,7 @@ const Diffuser = () => {
             brand: "COCODOR",
             price: 37800,
             imagePath: "/img/diffuser_4.png",
-            isNew: false,
+            isNew: true,
         },
         {
             id: 5,
