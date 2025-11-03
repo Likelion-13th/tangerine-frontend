@@ -1,6 +1,20 @@
 import React from "react";
 import "../styles/ToolBar.css";
 
+const MoveToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth"});
+};
+
+const MoveToBottom = () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth"});
+};
+
+const handleLoginRedirect = () => {
+    const redirectUrl = 'https://tangerine-likelion.netlify.app/';
+    const oauthUrl = `http://tangerine-dev-env.eba-3muqjbjx.ap-northeast-2.elasticbeanstalk.com/`
+    window.location.href=oauthUrl;
+}
+
 const ToolBar = () => {
     return (
         <div className = "toolbar-container">
@@ -28,14 +42,6 @@ const ToolBar = () => {
             </img>
         </div>
     );
-};
-
-const MoveToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth"});
-};
-
-const MoveToBottom = () => {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth"});
 };
 
 export default ToolBar;
