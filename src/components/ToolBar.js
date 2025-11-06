@@ -1,5 +1,7 @@
 import React from "react";
 import "../styles/ToolBar.css";
+import { useCookies } from 'react-cookie'
+import axios from 'axios';
 
 const MoveToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth"});
@@ -10,36 +12,63 @@ const MoveToBottom = () => {
 };
 
 const handleLoginRedirect = () => {
-    const redirectUrl = 'https://tangerine-likelion.netlify.app/';
-    const oauthUrl = `http://tangerine-dev-env.eba-3muqjbjx.ap-northeast-2.elasticbeanstalk.com/`
-    window.location.href=oauthUrl;
-}
+    const redirectUrl =
+        process.env.NODE_ENV === "development"
+            ? "http://localhost:3000"
+            : "https://tangerine-likelion.netlify.app/";
 
-const ToolBar = () => {
+    // 변경된 진입경로: /oauth2/start/kakao
+    const oauthUrl =
+      "http://sajang-dev.ap-northeast-2.elasticbeanstalk.com/oauth2/start/kakao" +
+      `?redirect_uri=${encodeURIComponent(redirectUrl)}`;
+
+      window.location.href = oauthUrl;
+};
+
+const ToolBar = ({ isLogin, onLoginChange }) => {
+    const [cookies, removeCookie] = useCookies(["accessToken"]);
+
+    const handleLogout = () => {
+        axios.delete("/users/logout", {
+            headers: {
+                accept: "*/*",
+                Authorization: `Bearer ${cookies.accessToken}`,
+            },
+        })
+        .then(() => {})
+        .catch((err) => {
+            console.log("LOGOUT API 요청 실패", err);
+        });
+    };
+
     return (
         <div className = "toolbar-container">
             <img
-                src = {`${process.env.PUBLIC_URL}/icon/icon_login.svg`}
+                src = {
+                    isLogin
+                        ? `${process.env.PUBLIC_URL}/icon/icon_logout.svg`
+                        : `${process.env.PUBLIC_URL}/icon/icon_login.svg`}
                 alt = "login"
-                className = "toolbar_icon">
-            </img>
+                className = "toolbar_icon"
+                onClick={isLogin ? handleLogout : handleLoginRedirect}
+            ></img>
             <img
                 src = {`${process.env.PUBLIC_URL}/icon/icon_recent.svg`}
                 alt = "recent"
-                className = "toolbar_icon">
-            </img>
+                className = "toolbar_icon"
+            ></img>
             <img
                 src = {`${process.env.PUBLIC_URL}/icon/icon_up.svg`}
                 alt = "up"
                 className = "toolbar_icon"
-                onClick = {MoveToTop}>
-            </img>
+                onClick = {MoveToTop}
+            ></img>
             <img
                 src = {`${process.env.PUBLIC_URL}/icon/icon_down.svg`}
                 alt = "down"
                 className = "toolbar_icon"
-                onClick = {MoveToBottom}>
-            </img>
+                onClick = {MoveToBottom}
+            ></img>
         </div>
     );
 };
