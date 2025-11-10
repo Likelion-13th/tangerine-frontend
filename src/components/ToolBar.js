@@ -19,7 +19,7 @@ const handleLoginRedirect = () => {
 
     // 변경된 진입경로: /oauth2/start/kakao
     const oauthUrl =
-      "http://sajang-dev.ap-northeast-2.elasticbeanstalk.com/oauth2/start/kakao" +
+      "http://tangerine-dev-env.eba-3muqjbjx.ap-northeast-2.elasticbeanstalk.com/oauth2/start/kakao" +
       `?redirect_uri=${encodeURIComponent(redirectUrl)}`;
 
       window.location.href = oauthUrl;

@@ -17,16 +17,19 @@ function App() {
     <CookiesProvider>
       <Router>
         <Header />
-        <ToolBar  isLogin={isLogin} onLoginChange={setIsLogin}/>
+        <ToolBar  isLogin={isLogin} onLoginChange={setIsLogin} />
         <Routes>
-          <Route path="/" element={<Home onLoginChange={setIsLogin}/>} />
+          <Route
+            path="/"
+            element={<Home onLoginChange={setIsLogin}/>}
+          />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/diffuser" element={<Diffuser />} />
           <Route path="/perfume" element={<Perfume />} />
           <Route path="/new" element={<New />} />
         </Routes>
         <Footer />
-    </Router>
+      </Router>
     </CookiesProvider>
     
   );

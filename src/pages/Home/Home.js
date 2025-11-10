@@ -23,7 +23,7 @@ const Home = ({onLoginChange}) => {
             onLoginChange(true);
             navigate("/", {replace: true});
         }
-    }, [setCookie, navigate, onLoginChange]);
+    }, [setCookie, navigate]);
     return (
         <div className="home-container">
             <Banner></Banner>
