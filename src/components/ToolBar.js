@@ -26,7 +26,8 @@ const handleLoginRedirect = () => {
 };
 
 const ToolBar = ({ isLogin, onLoginChange }) => {
-    const [cookies, removeCookie] = useCookies(["accessToken"]);
+    const [cookies] = useCookies(["accessToken"]);
+    //const [cookies, removeCookie] = useCookies(["accessToken"]);
 
     const handleLogout = () => {
         axios.delete("/users/logout", {

@@ -7,7 +7,8 @@ import { useCookies } from "react-cookie"
 import { useNavigate } from "react-router-dom";
 
 const Home = ({onLoginChange}) => {
-    const [cookies, setCookie] = useCookies(["accessToken"]);
+    const [setCookie] = useCookies(["accessToken"]);
+    //const [cookies, setCookie] = useCookies(["accessToken"]);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -20,10 +21,10 @@ const Home = ({onLoginChange}) => {
                 maxAge: 60 * 60 * 24 * 7
             });
 
-            onLoginChange(true);
             navigate("/", {replace: true});
+            onLoginChange(true);
         }
-    }, [setCookie, navigate]);
+    }, [setCookie, navigate, onLoginChange]);
     return (
         <div className="home-container">
             <Banner></Banner>
