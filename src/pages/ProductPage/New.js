@@ -4,7 +4,7 @@ import ProductCard from './ProductCard';
 import "../../styles/ProductPage.css";
 import PayModal from "../../components/PayModal";
 import axios from 'axios';
-import { useCookies } from "react-cookie";
+
 
 const New = ({isLogin}) => {
     const [products, setProducts] = useState([]);
