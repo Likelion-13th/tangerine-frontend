@@ -25,8 +25,6 @@ const Perfume = ({isLogin}) => {
         setModalOpen(false);
     };
 
-    const [cookies] = useCookies(["accessToken"]);
-
     useEffect(() => {
         axios
             .get("/categories/2/items",{

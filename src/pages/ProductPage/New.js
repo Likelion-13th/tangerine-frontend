@@ -25,8 +25,6 @@ const New = ({isLogin}) => {
         setModalOpen(false);
     }
     
-    const [cookies] = useCookies ("accessToken");
-    
     useEffect(() => {
     axios.get("/categories/3/items",{
             headers: {

@@ -25,7 +25,6 @@ const Diffuser = ({isLogin}) => {
         setModalOpen(false);
     };
 
-    const [cookies] = useCookies ("accessToken");
 
     useEffect(() => {
         axios.get("/categories/1/items",{
