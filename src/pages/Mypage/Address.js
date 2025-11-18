@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Address = () => {
+const Address = ({ handleSave }) => {
     const [zipcode, setZipcode] = useState("");
     const [address, setAddress] = useState("");
     const [addressDetail, setAddressDetail] = useState("");
@@ -9,15 +9,10 @@ const Address = () => {
         setAddressDetail(e.target.value);
     }
 
-    const handleSave = () => {
-        // API 호출
-        alert("저장");
-    }
-
     const handleSearchPostCode = () => {
         new window.daum.Postcode({
             oncomplete: function(data) {
-                // 성공 후에 로직
+                // 성공 후의 로직
                 setZipcode(data.zonecode);
                 setAddress(data.roadAddress || data.jibunAddress);
             }
@@ -34,7 +29,7 @@ const Address = () => {
                     </div>
                     <div 
                         className="address-button"
-                        onClick={handleSearchPostCode}
+                        onClick={(handleSearchPostCode)}
                     >우편번호 찾기</div>
                 </div>
                 <div className="address-section">
@@ -53,7 +48,7 @@ const Address = () => {
                     </div>
                     <div 
                         className="address-button"
-                        onClick={handleSave}
+                        onClick={() => handleSave(zipcode, address, addressDetail)}
                     >
                         저장하기
                     </div>

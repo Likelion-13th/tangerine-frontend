@@ -1,10 +1,6 @@
 import React from "react";
 
-const History = () => {
-
-	const handleCancel = () => {
-		alert("취소");
-	}
+const History = ({ historyData,onCancel }) => {
 	
   return (
     <div className="history-container-wrap">
@@ -22,39 +18,42 @@ const History = () => {
                     </tr>
                 </thead>
                 <tbody>
-		                <tr>
+                  {historyData.map((history)=>{return(
+                    <tr>
                         <td>2025-01-01</td>
                         <td>
                           <div className="product-info-cell">
                             <img
-                              src={`${process.env.PUBLIC_URL}/img/perfume_1.png`}
-                              alt="perfume_1"
+                              src={history.imagePath}
+                              alt={history.name}
                               className="history-perfume-image"
                             />
                             <div className="product-info-section">
                                 <div className="product-info-text">
-                                  오션 향수 오드퍼퓸
+                                  {history?.name ?? ""}
                                 </div>
                                 <div className="product-info-explain">
-                                  AT
+                                  {history?.brand ?? ""}
                                 </div>
                             </div>
                           </div>
                         </td>
                         <td>1</td>
-                        <td>495,000원</td>
-                        <td>배송중</td>
+                        <td>{history?.finalPrice ?? ""}원</td>
+                        <td>{history?.status ?? ""}</td>
+                        {/* 영어 말고 한국어로 뜨게 하고싶음*/}
                         <td>
 		                      <div className="history-cancel">
 		                        <div
 		                          className="history-cancel-button"
-		                          onClick={handleCancel}
+		                          onClick={()=>onCancel(history?.orderId)}
 		                        >  
 		                          취소
 		                        </div>
 		                      </div>
                         </td>
-                    </tr>
+                    </tr>)})}
+		                
                 </tbody>
             </table>
         </div>

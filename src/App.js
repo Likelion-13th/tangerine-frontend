@@ -23,10 +23,10 @@ function App() {
             path="/"
             element={<Home onLoginChange={setIsLogin}/>}
           />
-          <Route path="/mypage" element={<Mypage />} />
-          <Route path="/diffuser" element={<Diffuser />} />
-          <Route path="/perfume" element={<Perfume />} />
-          <Route path="/new" element={<New />} />
+          <Route path="/mypage" element={<Mypage isLogin={isLogin} />} />
+          <Route path="/diffuser" element={<Diffuser isLogin={isLogin}/>} />
+          <Route path="/perfume" element={<Perfume isLogin={isLogin}/>} />
+          <Route path="/new" element={<New isLogin={isLogin}/>} />
         </Routes>
         <Footer />
       </Router>

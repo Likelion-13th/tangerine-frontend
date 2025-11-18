@@ -26,7 +26,7 @@ const handleLoginRedirect = () => {
 };
 
 const ToolBar = ({ isLogin, onLoginChange }) => {
-    const [cookies] = useCookies(["accessToken"]);
+    const [cookies, removeCookie] = useCookies(["accessToken"]);
     //const [cookies, removeCookie] = useCookies(["accessToken"]);
 
     const handleLogout = () => {
@@ -36,7 +36,10 @@ const ToolBar = ({ isLogin, onLoginChange }) => {
                 Authorization: `Bearer ${cookies.accessToken}`,
             },
         })
-        .then(() => {})
+        .then(() => {
+            onLoginChange(false);
+            removeCookie("accessToken", { path: "/"});
+        })
         .catch((err) => {
             console.log("LOGOUT API 요청 실패", err);
         });
