@@ -73,6 +73,8 @@ const Mypage = () => {
                     maxMileage: response.data.result.maxMileage,
                 });
                 setOrderStatusData(response.data.result.orderStatusCounts);
+            }).catch((err) => {
+                console.log("API 요청 실패", err);
             })
         axios
             .get("/orders", {
@@ -95,6 +97,8 @@ const Mypage = () => {
                     }
                 })
                 setHistoryData(data)  
+            }).catch((err) => {
+                console.log("API 요청 실패", err);
             })
     }, [cookies.accessToken]);
 
