@@ -1,5 +1,11 @@
 import React from "react";
 
+const statusKorean = {
+  COMPLETE: "배송 완료",
+  CANCEL: "취소됨",
+  WAITING: "배송중"
+};
+
 const History = ({ historyData,onCancel }) => {
 	
   return (
@@ -20,7 +26,7 @@ const History = ({ historyData,onCancel }) => {
                 <tbody>
                   {historyData.map((history)=>{return(
                     <tr>
-                        <td>2025-01-01</td>
+                        <td>{history.createdAt.replace("T", " ").slice(0, 16)}</td>
                         <td>
                           <div className="product-info-cell">
                             <img
@@ -40,13 +46,14 @@ const History = ({ historyData,onCancel }) => {
                         </td>
                         <td>1</td>
                         <td>{history?.finalPrice ?? ""}원</td>
-                        <td>{history?.status ?? ""}</td>
-                        {/* 영어 말고 한국어로 뜨게 하고싶음*/}
+                        <td>{statusKorean[history.status] ?? history.status}</td>
+                        {/* 영어 말고 한국어로 뜨게 하고싶음
+                            -> 완료함*/}
                         <td>
 		                      <div className="history-cancel">
 		                        <div
 		                          className="history-cancel-button"
-		                          onClick={()=>onCancel(history?.orderId)}
+		                          onClick={() => onCancel(history?.orderId)}
 		                        >  
 		                          취소
 		                        </div>
