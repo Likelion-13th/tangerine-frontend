@@ -3,7 +3,7 @@ import React from "react";
 const statusKorean = {
   COMPLETE: "배송 완료",
   CANCEL: "취소됨",
-  WAITING: "배송중"
+  PROCESSING: "배송중"
 };
 
 const History = ({ historyData,onCancel }) => {
@@ -44,7 +44,7 @@ const History = ({ historyData,onCancel }) => {
                             </div>
                           </div>
                         </td>
-                        <td>1</td>
+                        <td>{history?.quantity??"NaN"}</td>
                         <td>{history?.finalPrice ?? ""}원</td>
                         <td>{statusKorean[history.status] ?? history.status}</td>
                         {/* 영어 말고 한국어로 뜨게 하고싶음
